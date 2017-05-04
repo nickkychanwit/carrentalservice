@@ -11,6 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'RentalController@index');
+Route::post('confirm', 'RentalController@confirm');
+Route::post('booking', 'RentalController@booking');
+Route::post('information/{id}', 'RentalController@information');
+Route::post('confirmed/{id}', 'RentalController@confirmed');

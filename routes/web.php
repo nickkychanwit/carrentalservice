@@ -10,9 +10,17 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', 'RentalController@index');
+Route::get('/', function () {
+    return view('welcome');
+});
+Route::get('/rental', 'RentalController@index');
 Route::post('confirm', 'RentalController@confirm');
 Route::post('booking', 'RentalController@booking');
 Route::post('information/{id}', 'RentalController@information');
 Route::post('confirmed/{id}', 'RentalController@confirmed');
+
+Route::get('/edit', 'MemberController@edit');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');

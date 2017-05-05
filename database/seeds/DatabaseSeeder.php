@@ -13,6 +13,8 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call(UsersTableSeeder::class);
+
+        
         $obj1 = new Car();
         $obj1->register = 'กท1111';
         $obj1->type = 'SUV';

@@ -35,7 +35,7 @@
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
-                                    <li><a href="http://Wongklomnew.dev/edit">Edit</a></li>
+                                    <li><a href="http://carrentalservice.dev/edit">Edit</a></li>
                                     <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();

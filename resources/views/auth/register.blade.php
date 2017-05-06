@@ -60,6 +60,17 @@
                             </div>
                         </div>
 
+
+                        <div class="form-group" >
+                            <label class="col-md-4 control-label">Select</label>
+                            <div class="col-md-6" >
+                            <select class="form-control" id="rule" name="rule" required >
+                                <option>Admin</option>
+                                <option>Guest</option>
+                            </select>
+                            </div>
+                        </div>
+
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">

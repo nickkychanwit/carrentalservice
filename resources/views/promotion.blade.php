@@ -37,36 +37,13 @@
           <section class="modal-card-body">
            <div class="content">
              <form @submit.prevent = "submitForm" method="post" id="addForm" enctype="multipart/form-data">
-<<<<<<< Updated upstream
-								<div class="form-group">
-=======
                 <div class="form-group">
->>>>>>> Stashed changes
                   <table>
                     <tr>
                       <th style="width:180px"><label for="name">Promotion Name</label></th>
                       <td><input type="text" class="form-control ; input " name="name"  id="name" placeholder="" required>  </td>
 
                     </tr>
-<<<<<<< Updated upstream
-					        </table>
-                </div>
-								<!-- <div class="form-group">
-												<label for="img">Image</label>
-												<input type="file" class="form-control"  id="img" name="img"  v-on:change="onFileChange" accept="image/*" required>
-								</div> -->
-								<div class="form-group">
-                  <table>
-                    <tr>
-                      <th style="width:180px"><div v-if="!image">
-  		                    <label>Select an image</label>
-  		                    </div>
-  		                <div v-else>
-  		                    <img :src="image" / width="200" height="200">
-  		                    <button @click="removeImage" class="button">Remove image</button>
-  		                </div></th>
-  		                <td><input name="image" id="image" type="file" class="form-control" @change="onFileChange"></td>
-=======
                   </table>
                 </div>
                 <!-- <div class="form-group">
@@ -84,23 +61,11 @@
                           <button @click="removeImage" class="button">Remove image</button>
                       </div></th>
                       <td><input name="image" id="image" type="file" class="form-control" @change="onFileChange"></td>
->>>>>>> Stashed changes
                     </tr>
 
 
                     </table>
                 </div>
-<<<<<<< Updated upstream
-								<div class="form-group">
-                  <table>
-                    <tr>
-												<th style="width:180px"><label for="startdate">Start Date</label></th>
-												<td><input type="date" class="form-control ; input " name="startdate" id="startdate" placeholder="" required></td>
-                    </tr>
-                  </table>
-                </div>
-								<div class="form-group">
-=======
                 <div class="form-group">
                   <table>
                     <tr>
@@ -110,7 +75,6 @@
                   </table>
                 </div>
                 <div class="form-group">
->>>>>>> Stashed changes
                   <table>
                     <tr>
                       <th style="width:180px"><label for="expdate">Exp Date</label></th>
@@ -118,13 +82,8 @@
                     </tr>
 
                   </table>
-<<<<<<< Updated upstream
-								</div>
-								<div class="form-group">
-=======
                 </div>
                 <div class="form-group">
->>>>>>> Stashed changes
                   <table>
                     <tr>
                       <th style="width:180px"><label for="type">Discount Type</label></th>
@@ -136,15 +95,9 @@
                     </tr>
                   </table>
 
-<<<<<<< Updated upstream
-								</div>
-
-								<div class="form-group">
-=======
                 </div>
 
                 <div class="form-group">
->>>>>>> Stashed changes
                   <table>
                     <tr>
                       <th style="width:180px"><label for="total">Discount</label></th>
@@ -152,13 +105,8 @@
                     </tr>
                   </table>
 
-<<<<<<< Updated upstream
-								</div>
-								<div class="form-group">
-=======
                 </div>
                 <div class="form-group">
->>>>>>> Stashed changes
                   <table>
                     <tr>
                       <th style="width:600px"><label for="descript">Description</label></th>
@@ -167,11 +115,7 @@
                   </table>
 
 
-<<<<<<< Updated upstream
-								</div>
-=======
                 </div>
->>>>>>> Stashed changes
 
             <button class="button is-primary btn-fill" type="submit">Add Promotions</button>
 
@@ -215,19 +159,6 @@
               </tr>
             </thead>
             <tbody>
-<<<<<<< Updated upstream
-														<tr v-for="d in data">
-																<td>@{{ d.id }}</td>
-                                <td>@{{ d.img }}</td>
-																<td>@{{ d.name }}</td>
-																<td>@{{ d.startDate }}</td>
-																<td>@{{ d.expDate }}</td>
-																<td>@{{ d.dc }}</td>
-                                <td>@{{ d.dcType }}</td>
-																<td>@{{ d.descript }}</td>
-														</tr>
-													</tbody>
-=======
                             <tr v-for="d in data">
                                 <td>@{{ d.id }}</td>
                                 <td>@{{ d.img }}</td>
@@ -239,7 +170,6 @@
                                 <td>@{{ d.descript }}</td>
                             </tr>
                           </tbody>
->>>>>>> Stashed changes
           </table>
         </div>
       </div>
@@ -255,30 +185,17 @@
     var vm = new Vue({
         el: '#vue-app',
         data:{
-<<<<<<< Updated upstream
-					'data':[]
-				},
-
-				methods:{
-					getPromotions: function(){
-						axios.get('/api/promotions', {
-=======
           'data':[]
         },
 
         methods:{
           getPromotions: function(){
             axios.get('/api/promotions', {
->>>>>>> Stashed changes
 
 
             }).then(function (response) {
                 console.log(response.data.data);
-<<<<<<< Updated upstream
-								if(response.data.success) vm.data = response.data.data;
-=======
                 if(response.data.success) vm.data = response.data.data;
->>>>>>> Stashed changes
 
             }).catch(function (error) {
 
@@ -286,15 +203,9 @@
                 console.log(error);
 
             });
-<<<<<<< Updated upstream
-					}
-
-				}
-=======
           }
 
         }
->>>>>>> Stashed changes
     });
 
     var vm2 = new Vue({
@@ -303,15 +214,9 @@
           'image':''
 
       },
-<<<<<<< Updated upstream
-  		  mounted: function(){
-  				vm.getPromotions();
-  			},
-=======
         mounted: function(){
           vm.getPromotions();
         },
->>>>>>> Stashed changes
       methods: {
              onFileChange(e) {
                var files = e.target.files || e.dataTransfer.files;
@@ -343,11 +248,7 @@
                 processData: false,
                 type: 'POST',
                 success: function(data){
-<<<<<<< Updated upstream
-  								vm.getPromotions();
-=======
                   vm.getPromotions();
->>>>>>> Stashed changes
                   alert(data);
                 }
               });
@@ -355,8 +256,4 @@
       }
   });
     </script>
-<<<<<<< Updated upstream
-</html>
-=======
 </html> 
->>>>>>> Stashed changes

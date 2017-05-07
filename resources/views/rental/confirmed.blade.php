@@ -1,6 +1,7 @@
-@extends('layouts.master')
+@extends('layouts.app')
 
 @section('content')
+<div class="container">
 <h1 class="title">Your booking was successfully !</h1><br>
 <table class="table table-bordered ">
   <thead>
@@ -65,5 +66,5 @@
   </tbody>
 </table>
 <button class="btn btn-primary center-block" type="button" name="button" onclick="window.print()">PRINT</button>
-
+</div>
 @endsection

@@ -14,6 +14,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/rental', 'RentalController@index');
+Route::get('/bookingall', 'RentalController@bookingAll');
 Route::post('confirm', 'RentalController@confirm');
 Route::post('booking', 'RentalController@booking');
 Route::post('information/{id}', 'RentalController@information');

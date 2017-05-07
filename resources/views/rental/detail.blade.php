@@ -1,6 +1,7 @@
-@extends('layouts.master')
+@extends('layouts.app')
 
 @section('content')
+<div class="container">
 <h1 class="title">Choose car</h1><br>
 <form class="form-inline">
   <label for="pick-date-input" class="col-2 col-form-label">Pick up Date</label>
@@ -37,4 +38,5 @@
   </tr>
   @endforeach
 </table>
+</div >
 @endsection

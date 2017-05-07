@@ -32,6 +32,13 @@ class RentalController extends Controller
     $data['cars'] = $objs;
     return view('rental.detail',$data);
   }
+  public function bookingAll(Request $request)
+  {
+
+    $objs = DB::select("SELECT * FROM bookings ");
+    $data['bookings'] = $objs;
+    return view('rental.bookingall',$data);
+  }
   public function information(Request $request,$id)
   {
     $data['title'] = 'Driver Information';
@@ -89,4 +96,5 @@ class RentalController extends Controller
       return view('rental.information',$data);
     }
   }
+
 }

@@ -1,6 +1,7 @@
-@extends('layouts.master')
+@extends('layouts.app')
 
 @section('content')
+<div class="container">
 <h1 class="title">Driver Information</h1><br>
 <form action="{{url('confirm')}}" method="post">
   <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
@@ -34,4 +35,5 @@
   <input type="hidden" name="carID" value="{{$car->id}}">
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+</div>
 @endsection

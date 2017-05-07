@@ -1,8 +1,9 @@
-@extends('layouts.master')
+@extends('layouts.app')
 
 @section('content')
-<h1 class="title">Search for rental cars</h1><br>
-<div class="" id="serch">
+@if (Auth::check()){
+<div class="container" id="serch" >
+  <h1 class="title">Search for rental cars</h1><br>
 <form action="{{url('booking')}}" method="post">
   <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
   <div class="form-group">
@@ -46,4 +47,6 @@ function updatePick(){
   $('#pick-date-input').prop('max', maxDate);
 }
 </script>
+@else  <?php echo "<script>window.location = 'http://carrentalservice.dev/login'</script>" ?>
+@endif
 @endsection

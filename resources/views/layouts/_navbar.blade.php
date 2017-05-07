@@ -8,9 +8,8 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="{{ url('/') }}">Carn Rental</a>
+      <a class="link" href="{{ url('/') }}">Carrental Service</a>
     </div>
-
 
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -51,6 +50,12 @@
                                     </li>
                                 </ul>
                             </li>
+                            @if ((Auth::user()->rule)=="Admin")
+                              <li><a href="{{ url('/login') }}">Login</a></li>
+                              <li><a href="{{ url('/login') }}">Login</a></li>
+                              <li><a href="{{ url('/login') }}">Login</a></li>
+                            @endif
+
              @else
                  <li><a href="{{ url('/login') }}">Login</a></li>
                  <li><a href="{{ url('/register') }}">Register</a></li>

@@ -1,6 +1,7 @@
-@extends('layouts.master')
+@extends('layouts.app')
 
 @section('content')
+<div class="container">
 <h1 class="title">Please check your information</h1><br>
 <br>
 <form class="form-group" action="{{url('confirmed/'.$car->id)}}" method="post">
@@ -40,6 +41,6 @@
   <button type="submit" class="btn btn-danger" name="button" value="back">Edit Driver Information</button>
 </form>
 
-
+</div >
 
 @endsection

@@ -22,6 +22,7 @@ class CreateBookingsTables extends Migration
             $table->integer('phoneNum');
             $table->date('pickDate');
             $table->date('dropDate');
+            $table->string('status');
             $table->timestamps();
         });
     }

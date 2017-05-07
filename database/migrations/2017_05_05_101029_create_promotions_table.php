@@ -37,4 +37,8 @@ class CreatePromotionsTable extends Migration
     {
         //
     }
+<<<<<<< Updated upstream
 }
+=======
+} 
+>>>>>>> Stashed changes

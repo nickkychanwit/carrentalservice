@@ -125,4 +125,8 @@ class PromotionController extends BaseController
     {
         //
     }
+<<<<<<< Updated upstream
 }
+=======
+} 
+>>>>>>> Stashed changes

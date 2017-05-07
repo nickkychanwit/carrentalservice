@@ -26,4 +26,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 Route::post('/promotion','PromotionController@store');
+<<<<<<< Updated upstream
 Route::get('/promotion','PromotionController@show');
+=======
+Route::get('/promotion','PromotionController@show'); 
+>>>>>>> Stashed changes

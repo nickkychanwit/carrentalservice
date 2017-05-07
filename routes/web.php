@@ -24,3 +24,5 @@ Route::get('/edit', 'MemberController@edit');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+Route::post('/promotion','PromotionController@store');
+Route::get('/promotion','PromotionController@show');

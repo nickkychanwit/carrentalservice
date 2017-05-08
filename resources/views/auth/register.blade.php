@@ -63,7 +63,7 @@
                             <label for="phoneNum" class="col-md-4 control-label">Phone Number</label>
 
                             <div class="col-md-6">
-                                <input id="phoneNum" type="phoneNum" class="form-control" name="phoneNum" required>
+                                <input id="phone" type="text" class="form-control" name="phone" required>
                             </div>
                         </div>
 

@@ -22,7 +22,7 @@
   <td class="info">{{$b}}</td>
   @endforeach
   <td >@if ($book->status=="receive")
-        <button onclick="window.location.href='/return'" class="btn btn-success">Return</button>
+        <button onclick="window.location.href='/return/<?php echo $book->id?>/<?php echo "return" ?>'" class="btn btn-success">Return</button>
         @endif
   </td>
   </tr>

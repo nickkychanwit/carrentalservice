@@ -63,8 +63,18 @@
       <th scope="row">Total Price</th>
       <td>{{$dateDiff*$car->pricePerDay}} Baht</td>
     </tr>
+    <th scope="row">Discount</th>
+    <td><?php  $inf = DB::table('promotions')->get(); ?>
+    @foreach ($inf as $inn)
+    {{$inn->dcType}}
+     {{$inn->dc}}
+     @endforeach</td>
+  </tr>
   </tbody>
 </table>
 <button class="btn btn-primary center-block" type="button" name="button" onclick="window.print()">PRINT</button>
 </div>
+<tr>
+
+
 @endsection

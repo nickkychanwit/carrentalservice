@@ -14,7 +14,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/return', 'RentalController@bookingReturn');
-Route::get('/recieve', 'RentalController@bookingReceive');
+Route::get('/promotion', 'PromotionController@show');
+
+Route::get('/receive', 'RentalController@bookingReceive');
+Route::get('/receive/{id}/{status}', 'RentalController@updateStatus');
+Route::get('/return/{id}/{status}', 'RentalController@updateStatus');
 Route::get('/rental', 'RentalController@index');
 Route::get('/bookingall', 'RentalController@bookingAll');
 Route::post('confirm', 'RentalController@confirm');
@@ -28,6 +32,5 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-Route::get('/promotion','PromotionController@store');
-Route::post('/promotion','PromotionController@show');
+Route::get('promotions','PromotionController@store');
 Route::get('/voucher','VoucherController@index')->name('voucher');

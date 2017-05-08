@@ -13,6 +13,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/return', 'RentalController@bookingReturn');
+Route::get('/recieve', 'RentalController@bookingReceive');
 Route::get('/rental', 'RentalController@index');
 Route::get('/bookingall', 'RentalController@bookingAll');
 Route::post('confirm', 'RentalController@confirm');

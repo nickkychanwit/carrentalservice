@@ -96,5 +96,20 @@ class RentalController extends Controller
       return view('rental.information',$data);
     }
   }
+  public function bookingReturn(Request $request)
+  {
+
+    $objs = DB::select("SELECT * FROM bookings ");
+    $data['bookings'] = $objs;
+    return view('rental.return',$data);
+  }
+  public function bookingReceive(Request $request)
+  {
+
+    $objs = DB::select("SELECT * FROM bookings ");
+    $data['bookings'] = $objs;
+    return view('rental.receive',$data);
+  }
+
 
 }

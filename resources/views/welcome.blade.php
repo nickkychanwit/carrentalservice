@@ -83,12 +83,16 @@
                 </div>
 
                 <div class="links">
-                  <a href="http://carrentalservice.dev/rental">Reserve</a>
-                    <a href="http://carrentalservice.dev/return">Return</a>
-                    <a href="https://carrentalservice.dev/voucher">Voucher</a>
+                  @if(Auth::check())
+                    @if(Auth::user()->rule!="Admin")<a href="http://carrentalservice.dev/rental">Reserve</a>@endif
+                    @if(Auth::user()->rule=="Admin")  <a href="http://carrentalservice.dev/recieve">Recieve</a>@endif
+                    @if(Auth::user()->rule=="Admin")  <a href="http://carrentalservice.dev/return">Return</a>@endif
+                    @if(Auth::user()->rule=="Customer")  <a href="https://carrentalservice.dev/voucher">Voucher</a>@endif
+                  @else <a href="http://carrentalservice.dev/rental">Reserve</a>
+                  @endif
                     <a href="https://carrentalservice.dev/promotion">Promotion</a>
-                    <a href="https://carrentalservice.dev/contact-us">Contact Us</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                  <a href="https://carrentalservice.dev/contact-us">Contact Us</a>
+                    <a href="https://github.com/nickkychanwit/carrentalservice">GitHub</a>
                 </div>
             </div>
         </div>

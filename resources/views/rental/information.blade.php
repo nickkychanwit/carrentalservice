@@ -1,6 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
+<?php $name=explode(" ", Auth::user()->name);
+$firstName=$name[0];
+$lastName =$name[1];
+$email= Auth::user()->email;
+$phoneNum= Auth::user()->phone;
+?>
 <div class="container">
 <h1 class="title">Driver Information</h1><br>
 <form action="{{url('confirm')}}" method="post">

@@ -1,19 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
-use Illuminate\Foundation\Bus\DispatchesJobs;
-use Illuminate\Routing\Controller as BaseController;
-use Illuminate\Foundation\Validation\ValidatesRequests;
-use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\Request;
-use App\promotions;
-use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
 
-
-class PromotionController extends BaseController
+class PromotionController extends Controller
 {
-    use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
     /**
      * Display a listing of the resource.
      *
@@ -21,10 +14,15 @@ class PromotionController extends BaseController
      */
     public function index()
     {
-      $promotions = \App\Promotion::all();
+      $car = \App\Car::all();
         return [
             'success' => true,
-            'data' => $promotions
+            'data' => $car,
+            're' =>'',
+        'type' =>'',
+        'brand' => '',
+        'seat' => '',
+        'pricePerDay' => '',
         ];
     }
 
@@ -46,21 +44,17 @@ class PromotionController extends BaseController
      */
     public function store(Request $request)
     {
-
-      $promotion = new \App\Promotion;
-      $promotion->name = trim($request->name);
-      $promotion->startDate = trim($request->startDate);
-      $promotion->expDate = trim($request->expDate);
-      $promotion->img =trim($request->img);
-      $promotion->dcType = trim($request->dcType);
-      $promotion->dc = trim($request->dc);
-      $promotion->descript = trim($request->descript);
-      if (!empty($promotion->name) && $promotion->save()){
+      $car = new \App\Car;
+      $car->register = trim($request->register);
+      $car->type = trim($request->type);
+      $car->brand = trim($request->brand);
+      $car->seat = trim($request->seat);
+      $car->pricePerDay = $request->pricePerDay;
+      if (!empty($car->name) && $car->save()){
           return [
             'success' => true,
-            'data' => "Promotion '{$promotion->name}' was saved with id: {$promotion->id}",
-            'id' => $promotion->id
-
+            'data' => "Promotion '{$car->name}' was saved with id: {$car->id}",
+            'id' => $car->id
         ];
       } else {
           return [
@@ -69,6 +63,28 @@ class PromotionController extends BaseController
             ];
       }
 
+
+
+      /*
+      $input = $request->all();
+      if (trim($request->password) == '') {
+          $input = $request->except('password');
+      } else {
+        $input = $request->all();
+      }
+      if ($file = $request->file('image')) {
+        $name = time() . $file->getClientOriginalName();
+        $file->move('images', $name);
+        // console.log($name);
+        // $input['photo_id'] = $photo->id;
+    }
+    $input['password'] = bcrypt($request->password);
+    // User::create($input);
+    return [
+              'success' => false,
+              'data' => $file
+            ];
+*/
     }
 
     /**
@@ -77,12 +93,12 @@ class PromotionController extends BaseController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show()
-    {
-        //
-        $promotion = DB::table('promotions')->get();
-        return view('promotion',['data'=>$promotion]);
-    }
+     public function show()
+     {
+         //
+         $car = DB::table('car')->get();
+         return view('car',['data'=>$car]);
+     }
 
     /**
      * Show the form for editing the specified resource.
@@ -117,4 +133,4 @@ class PromotionController extends BaseController
     {
         //
     }
-}
+} 

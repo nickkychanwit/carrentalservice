@@ -32,5 +32,11 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-Route::get('promotions','PromotionController@store');
+// Route::get('/promotion','PromotionController@index');
+Route::get('/promotion', function () {
+    return view('promotion');
+});
+Route::post('/promotion','PromotionController@show');
 Route::get('/voucher','VoucherController@index')->name('voucher');
+Route::get('/addcar','CarController@index');
+Route::post('/addcar','CarController@store')->name('createcar');

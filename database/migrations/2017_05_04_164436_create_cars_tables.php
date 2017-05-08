@@ -20,6 +20,8 @@ class CreateCarsTables extends Migration
             $table->string('brand');
             $table->integer('seat');
             $table->integer('pricePerDay');
+            $table->string('nameimg');
+            $table->binary('img');
             $table->timestamps();
         });
     }

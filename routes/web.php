@@ -34,3 +34,5 @@ Route::get('/home', 'HomeController@index');
 
 Route::get('promotions','PromotionController@store');
 Route::get('/voucher','VoucherController@index')->name('voucher');
+Route::get('/addcar','CarController@index');
+Route::post('/addcar','CarController@store')->name('createcar');

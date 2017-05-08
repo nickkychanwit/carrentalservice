@@ -25,9 +25,7 @@ Route::get('/edit', 'MemberController@edit');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
 Route::get('/promotion','PromotionController@store');
 Route::post('/promotion','PromotionController@show');
-// Route::get('/voucher',function(){
-//   return view('voucher');
-// });
 Route::get('/voucher','VoucherController@index')->name('voucher');

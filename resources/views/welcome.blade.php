@@ -84,10 +84,15 @@
 
                 <div class="links">
                   @if(Auth::check())
+                   <a href="http://carrentalservice.dev/edit">Edit User</a>
                     @if(Auth::user()->rule!="Admin")<a href="http://carrentalservice.dev/rental">Reserve</a>@endif
-                    @if(Auth::user()->rule=="Admin")  <a href="http://carrentalservice.dev/recieve">Recieve</a>@endif
-                    @if(Auth::user()->rule=="Admin")  <a href="http://carrentalservice.dev/return">Return</a>@endif
+                    @if(Auth::user()->rule=="Admin")  <a href="http://carrentalservice.dev/recieve">Recieve</a>
+                   <a href="http://carrentalservice.dev/return">Return</a>
+                       <a href="http://carrentalservice.dev/bookingall">data booking</a>
+
+                       @endif
                     @if(Auth::user()->rule=="Customer")  <a href="https://carrentalservice.dev/voucher">Voucher</a>@endif
+
                   @else <a href="http://carrentalservice.dev/rental">Reserve</a>
                   @endif
                     <a href="https://carrentalservice.dev/promotion">Promotion</a>

@@ -36,7 +36,7 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest');
+        $this->middleware(['guest','Admin']);
     }
 
     /**
@@ -67,7 +67,8 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
-            'rule' => $data['rule']
+            'rule' => $data['rule'],
+             'phone' => $data['phone']
         ]);
     }
 }

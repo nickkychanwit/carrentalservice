@@ -42,7 +42,7 @@ class DatabaseSeeder extends Seeder
          'expDate'=>'2017-05-20' ,'dcType'=>'percent','dc'=>'10','img'=>'1494183446imgpro01.png',,
          'descript'=>'โปรโมชั่นวันหยุดเสาร์อาทิตย์ เช่ารถวันเสาร์-อาทิตย์ลดราคา10%']);
           App\promotion::create(['name' => 'โปรโมชั่นเช่ารถมากกว่า3วัน','startDate' => '2017-05-10' ,
-          'expDate'=>'2017-06-30' ,'dcType'=>'baht','dc'=>'500','img'=>'imgpro02.png',
+          'expDate'=>'2017-06-30' ,'dcType'=>'baht','dc'=>'500','img'=>'imgpro02.jpg',
           'descript'=>'โปรโมชั่นเช่ารถมากกว่า3วัน จะได้รับส่วนลด500บาททันที']);
     }
 }

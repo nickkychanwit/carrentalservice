@@ -61,4 +61,6 @@
                 font-family: 'Montserrat', sans-serif;
             }
 
-            nav
+            .nav{
+              margin: 20px;
+            }

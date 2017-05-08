@@ -12,14 +12,15 @@
         <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Lato|Montserrat" rel="stylesheet">
         <link href="{{asset('css/welcomestyle.css')}}" rel="stylesheet">
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <!-- Styles -->
 
     </head>
     <body>
-        <div class="">
+        <div class="nav ">
             @if (Route::has('login'))
             <ul>
-                <div class="top-right links">
+                <div class="top-right pull-right links">
                     @if (Auth::check())
                       <a href="{{ url('/home') }}">Home</a>
                     @else

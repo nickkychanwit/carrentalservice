@@ -46,15 +46,7 @@ class PromotionController extends BaseController
      */
     public function store(Request $request)
     {
-      $v = Validator::make($request->all(), [
-       'title' => 'required|unique|max:255',
-       'body' => 'required',
-       ]);
 
-       if ($v->fails())
-       {
-           return redirect()->back()->withErrors($v->errors());
-       }
       $promotion = new \App\Promotion;
       $promotion->name = trim($request->name);
       $promotion->startDate = trim($request->startDate);
@@ -125,4 +117,4 @@ class PromotionController extends BaseController
     {
         //
     }
-} 
+}

@@ -1,0 +1,64 @@
+
+    html, body {
+        background: url("/images/cssimg/bgwelcome.png")
+        no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+
+        .full-height {
+          height: 100vh;
+          }
+
+        .flex-center {
+          align-items: center;
+          display: flex;
+          justify-content: center;
+        }
+
+        .position-ref {
+            position: relative;
+        }
+
+          .top-right link {
+            position: absolute;
+            right: 10px;
+            top: 18px;
+            color: white;
+          }
+
+            .content {
+              color: #eeeeee;
+              text-align: center;
+              margin-top : 70px;
+            }
+
+            .title {
+              font-size: 84px;
+            }
+
+            .links > a {
+              color: #EEDD82;
+              padding: 0 25px;
+              font-size: 15px;
+              font-weight: 600;
+              font-family: 'Lato', sans-serif;
+              letter-spacing: .1rem;
+              text-decoration: none;
+              text-transform: uppercase;
+
+              width: 150px;
+              height: 200px;
+            }
+
+
+
+            .m-b-md {
+                margin-bottom: 30px;
+                font-family: 'Lato', sans-serif;
+                font-family: 'Montserrat', sans-serif;
+            }
+
+            nav

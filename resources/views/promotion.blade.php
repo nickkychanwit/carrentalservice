@@ -161,7 +161,7 @@
             <tbody>
                             <tr v-for="d in data">
                                 <td>@{{ d.id }}</td>
-                                <td>@{{ d.img }}</td>
+                                <td><img :src="'/images/promotions/' + d.img" height="150" width="200"></td>
                                 <td>@{{ d.name }}</td>
                                 <td>@{{ d.startDate }}</td>
                                 <td>@{{ d.expDate }}</td>
@@ -256,4 +256,4 @@
       }
   });
     </script>
-</html> 
+</html>

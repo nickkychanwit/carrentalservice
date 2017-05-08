@@ -28,6 +28,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-Route::get('/promotion','PromotionController@store');
+// Route::get('/promotion','PromotionController@index');
+Route::get('/promotion', function () {
+    return view('promotion');
+});
 Route::post('/promotion','PromotionController@show');
 Route::get('/voucher','VoucherController@index')->name('voucher');

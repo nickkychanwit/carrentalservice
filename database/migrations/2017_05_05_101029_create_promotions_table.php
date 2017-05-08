@@ -37,4 +37,4 @@ class CreatePromotionsTable extends Migration
     {
         //
     }
-} 
+}

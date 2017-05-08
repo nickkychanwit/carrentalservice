@@ -63,7 +63,7 @@
                             <label for="phoneNum" class="col-md-4 control-label">Phone Number</label>
 
                             <div class="col-md-6">
-                                <input id="phoneNum" type="phoneNum" class="form-control" name="phoneNum" required>
+                                <input id="phone" type="text" class="form-control" name="phone" required>
                             </div>
                         </div>
 
@@ -71,7 +71,9 @@
                             <label class="col-md-4 control-label">Select</label>
                             <div class="col-md-6" >
                             <select class="form-control" id="rule" name="rule" required >
-                                <option>Admin</option>
+                              
+                                  <option>Admin</option>
+
                                 <option>Customer</option>
                             </select>
                             </div>

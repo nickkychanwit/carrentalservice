@@ -37,13 +37,21 @@
                 </div>
 
                 <div class="links">
-                  <a href="http://carrentalservice.dev/rental">Reserve</a>
-                    <a href="http://carrentalservice.dev/return">Return</a>
-                    <a href="https://carrentalservice.dev/voucher">Voucher</a>
-                    <a href="{{ url('/promotion')}}">Promotion</a>
+                  @if(Auth::check())
+                   <a href="http://carrentalservice.dev/edit">Edit User</a>
+                    @if(Auth::user()->rule!="Admin")<a href="http://carrentalservice.dev/rental">Reserve</a>@endif
+                    @if(Auth::user()->rule=="Admin")  <a href="http://carrentalservice.dev/receive">Receive</a>
+                   <a href="http://carrentalservice.dev/return">Return</a>
+                       <a href="http://carrentalservice.dev/bookingall">data booking</a>
 
-                    <a href="https://carrentalservice.dev/contact-us">Contact Us</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                       @endif
+                    @if(Auth::user()->rule=="Customer")  <a href="https://carrentalservice.dev/voucher">Voucher</a>@endif
+
+                  @else <a href="http://carrentalservice.dev/rental">Reserve</a>
+                  @endif
+                    <a href="http://carrentalservice.dev/promotion">Promotion</a>
+                  <a href="https://carrentalservice.dev/contact-us">Contact Us</a>
+                    <a href="https://github.com/nickkychanwit/carrentalservice">GitHub</a>
                 </div>
             </div>
         </div>

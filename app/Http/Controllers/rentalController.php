@@ -110,6 +110,14 @@ class RentalController extends Controller
     $data['bookings'] = $objs;
     return view('rental.receive',$data);
   }
+public function updateStatus(Request $request,$id,$status){
+  DB::table('bookings')
+            ->where('id', $id)
+            ->update(['status' => $status]);
+            $objs = DB::select("SELECT * FROM bookings ");
+            $data['bookings'] = $objs;
+            return view('rental.'.$status,$data);
 
+}
 
 }

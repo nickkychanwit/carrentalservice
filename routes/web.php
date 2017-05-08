@@ -14,7 +14,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/return', 'RentalController@bookingReturn');
-Route::get('/recieve', 'RentalController@bookingReceive');
+Route::get('/promotion', 'PromotionController@show');
+
+Route::get('/receive', 'RentalController@bookingReceive');
+Route::get('/receive/{id}/{status}', 'RentalController@updateStatus');
+Route::get('/return/{id}/{status}', 'RentalController@updateStatus');
 Route::get('/rental', 'RentalController@index');
 Route::get('/bookingall', 'RentalController@bookingAll');
 Route::post('confirm', 'RentalController@confirm');
@@ -34,3 +38,5 @@ Route::get('/promotion', function () {
 });
 Route::post('/promotion','PromotionController@show');
 Route::get('/voucher','VoucherController@index')->name('voucher');
+Route::get('/addcar','CarController@index');
+Route::post('/addcar','CarController@store')->name('createcar');

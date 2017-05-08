@@ -23,7 +23,7 @@
 
   @endforeach
   <td class="info">@if ($book->status=="reserve")
-        <button onclick="window.location.href='/receive'" class="btn btn-warning">Recieve</button>
+        <button onclick="window.location.href='/receive/<?php echo $book->id?>/<?php echo "receive" ?>'" class="btn btn-warning">Recieve</button>
         @endif
   </td>
   </tr>

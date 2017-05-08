@@ -1,126 +1,30 @@
-@extends('layouts.app')
-@section('content')
+<!doctype html>
+<html lang="{{ config('app.locale') }}">
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href="{{asset('css/bulma.css')}}" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="{{asset('css/mystyle.css')}}" rel="stylesheet">
+        <script src="http://bulma.io/javascript/jquery-2.2.0.min.js"></script>
+        <script src="http://bulma.io/javascript/clipboard.min.js"></script>
+        <script src="http://bulma.io/javascript/bulma.js"></script>
+        <title>Car Rental Service</title>
 
 
 
+    </head>
+    <body>
+      <div class=" column is-11 ">
+        <div class="content">
 
-       <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" style="margin-bottom:10px ; margin-left:70px">Create Promotion</button>
-
-  <!-- Modal -->
-        <div class="modal fade" id="myModal" role="dialog">
-          <div class="modal-dialog">
-
-            <!-- Modal content-->
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title" style="font-weight:bold;">Create Promotion</h4>
-              </div>
-              <div class="modal-body">
-              <div class="" id="vue-add-promotion">
-                <form @submit.prevent = "submitForm" method="post" id="addForm" enctype="multipart/form-data">
-                   <div class="form-group">
-                     <table>
-                       <tr>
-                         <th style="width:200px"><label for="name">Promotion Name</label></th>
-                         <td><input type="text" class="form-control ; input " name="name"  id="name" placeholder="" required>  </td>
-
-                       </tr>
-                     </table>
-                   </div>
-                   <!-- <div class="form-group">
-                           <label for="img">Image</label>
-                           <input type="file" class="form-control"  id="img" name="img"  v-on:change="onFileChange" accept="image/*" required>
-                   </div> -->
-                   <div class="form-group">
-                     <table>
-                       <tr>
-                         <th style="width:200px"><div v-if="!image">
-                             <label>Select an image</label>
-                             </div>
-                         <div v-else>
-                             <img :src="image" / width="200" height="200">
-                             <button @click="removeImage" class="button">Remove image</button>
-                         </div></th>
-                         <td><input name="image" id="image" type="file" class="form-control" @change="onFileChange"></td>
-                       </tr>
-
-
-                       </table>
-                   </div>
-                   <div class="form-group">
-                     <table>
-                       <tr>
-                           <th style="width:200px"><label for="startdate">Start Date</label></th>
-                           <td><input type="date" class="form-control ; input " name="startdate" id="startdate" placeholder="" required></td>
-                       </tr>
-                     </table>
-                   </div>
-                   <div class="form-group">
-                     <table>
-                       <tr>
-                         <th style="width:200px"><label for="expdate">Expiration Date</label></th>
-                         <td><input type="date" class="form-control ; input " name="expdate" id="expdate"  placeholder="" required></td>
-                       </tr>
-
-                     </table>
-                   </div>
-                   <div class="form-group">
-                     <table>
-                       <tr>
-                         <th style="width:200px"><label for="type">Discount Type</label></th>
-                         <td ><select  class="form-control ; input " name="type"  id="type" required>
-                              <option value="" disabled selected>Choose discount type</option>
-                              <option value="percent" >Percent</option>
-                              <option value="baht" >Baht</option>
-                            </select></td>
-                       </tr>
-                     </table>
-
-                   </div>
-
-                   <div class="form-group">
-                     <table>
-                       <tr>
-                         <th style="width:200px"><label for="total">Discount</label></th>
-                         <td><input type="text" class="form-control ; input " name="total" id="total" placeholder="" required></td>
-                       </tr>
-                     </table>
-
-                   </div>
-                   <div class="form-group">
-                     <table>
-                       <tr>
-                         <th style="width:200px"><label for="descript">Description</label></th>
-                         <td> <textarea  class="form-control " rows="5" col="400" name="descript" id="descript" placeholder="----description---" > </textarea></td>
-                       </tr>
-                     </table>
-
-
-                   </div>
-
-               <button class="btn is-primary btn-fill" type="submit">Add Promotions</button>
-
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              </div>
-             <!-- <footer class="modal-card-foot">
-               <button class="btn btn-success btn-fill" type="submit">Add Promotions</button>
-              <button class="button btn-primary" type="submit">Submit</button>
-              <a class="button">Cancel</a>
-             </footer> -->
-               </section>
-               </form>
-             </div>
-
-              </div>
-
-            </div>
-
-          </div>
-        </div>
-
+         <p>
+           <a class="button is-danger  is-large modal-button" data-target="#modal-ter"><span><i class="fa fa-plus" aria-hidden="true"></i> Create Promotion</span></a>
+         </p>
+       </div>
 
         <div id="modal-ter" class="modal">
           <div class="" id="vue-add-promotion">
@@ -209,65 +113,39 @@
                       <td> <textarea  class="form-control " rows="7" cols="60" name="descript" id="descript" placeholder="----description---" > </textarea></td>
                     </tr>
                   </table>
+
+
                 </div>
 
             <button class="button is-primary btn-fill" type="submit">Add Promotions</button>
+
+           </div>
+
+          <!-- <footer class="modal-card-foot">
+            <button class="btn btn-success btn-fill" type="submit">Add Promotions</button>
+           <button class="button btn-primary" type="submit">Submit</button>
+           <a class="button">Cancel</a>
+          </footer> -->
             </section>
-            </div>
             </form>
 
           </div>
 
 
 
+
 </div>
-</div>
 
+        </div>
 
-        <div class="card">
-
-          <div style="background-color:#eeeeee ; width:1200px ;margin-bottom:10px ; margin-left:70px" id="vue-app">
-
-
-              <table class="table">
-                <thead class="thead-inverse">
-                  <tr>
-                    <th style="width:100px"><abbr>ID</abbr></th>
-                    <th style="width:210px"><abbr>Promotion img</abbr></th>
-                    <th style="width:150px"><abbr>Promotion name</abbr></th>
-                    <th style="width:110px"><abbr>Start date</abbr></th>
-                    <th style="width:130px"><abbr>Expiration date</abbr></th>
-                    <th style="width:60px"><abbr>Discount</abbr></th>
-                    <th style="width:150px"><abbr>Discount Type</abbr></th>
-                    <th ><abbr>Description</abbr></th>
-
-                  </tr>
-                </thead>
-                <tbody>
-                                <tr v-for="d in data">
-                                    <td>@{{ d.id }}</td>
-                                    <td><img :src="'/images/promotions/' + d.img" height="150" width="200"></td>
-                                    <td>@{{ d.name }}</td>
-                                    <td>@{{ d.startDate }}</td>
-                                    <td>@{{ d.expDate }}</td>
-                                    <td>@{{ d.dc }}</td>
-                                    <td>@{{ d.dcType }}</td>
-                                    <td>@{{ d.descript }}</td>
-                                </tr>
-                              </tbody>
-              </table>
-            </div>
-
-
-
-        <!-- <div class="card">
-          <div class="card-header">
-            Featured
+        <div class="message is-grey">
+          <div class="message-header">
+            Promotions
           </div>
         <div class="message-body" id="vue-app">
 
           <table class="table">
-            <thead class="thead-inverse">
+            <thead>
               <tr>
                 <th style="width:100px"><abbr>ID</abbr></th>
                 <th style="width:210px"><abbr>Promotion img</abbr></th>
@@ -294,14 +172,14 @@
                           </tbody>
           </table>
         </div>
-
-    </div>
       </div>
- -->
 
 
-@endsection
-@section('script')
+      </div>
+
+
+    </body>
+    <script src="/js/app.js" charset="utf-8"></script>
     <script>
 
     var vm = new Vue({
@@ -372,11 +250,10 @@
                 success: function(data){
                   vm.getPromotions();
                   alert(data);
-                  document.getElementById("addForm").reset();
                 }
               });
              }
       }
   });
     </script>
-@endsection
+</html>

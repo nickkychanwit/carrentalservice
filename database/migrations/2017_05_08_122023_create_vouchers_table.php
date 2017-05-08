@@ -20,9 +20,7 @@ class CreateVouchersTable extends Migration
           $table->string('startDate');
           $table->string('endDate');
           $table->string('discount');
-          $table->integer('user_id');
-          $table->string('code');
-          $table->string('status');
+          $table->string('pointCosume');
           $table->timestamps();
         //
       });

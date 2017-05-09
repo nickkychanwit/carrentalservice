@@ -257,6 +257,7 @@
                               </tbody>
               </table>
             </div>
+          </div>
 
 
 
@@ -301,6 +302,7 @@
 
 
 @endsection
+
 @section('script')
     <script>
 

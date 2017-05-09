@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class MemberController extends Controller
 {
-    private $api = "http://wongklom.dev/api/";
+    private $api = "http://carrentalservice.dev/api/";
 
 
     public function __construct()

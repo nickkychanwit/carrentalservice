@@ -13,4 +13,5 @@ class Promotion extends Model
     // {
     //     return $this->hasMany('App\Album');
     // }
+
 }

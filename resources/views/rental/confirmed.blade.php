@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="card">
+
+          <div style="background-color:#eeeeee ; width:1200px ;margin-bottom:10px ; margin-left:70px" id="vue-app">
 <div class="container">
 <h1 class="title">Your booking was successfully !</h1><br>
 <table class="table table-bordered ">
@@ -63,18 +66,24 @@
       <th scope="row">Total Price</th>
       <td>{{$dateDiff*$car->pricePerDay}} Baht</td>
     </tr>
-    <th scope="row">Discount</th>
+    <th scope="row">Discount Promotion</th>
     <td><?php  $inf = DB::table('promotions')->get(); ?>
     @foreach ($inf as $inn)
     {{$inn->dcType}}
      {{$inn->dc}}
      @endforeach</td>
   </tr>
+<th scope="row">Discount Voucher</th>
+  <td><?php  $inf = DB::table('usevoucher')->get(); ?>
+  @foreach ($inf as $inn)
+  {{$inn->discount}} Bath
+   @endforeach</td>
   </tbody>
 </table>
 <button class="btn btn-primary center-block" type="button" name="button" onclick="window.print()">PRINT</button>
 </div>
 <tr>
-
+</div>
+</div>
 
 @endsection

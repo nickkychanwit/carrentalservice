@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Voucher extends Model
 {
-    protected $fillable = ['name','startDate','endDate','dcType','dc','img','descript'];
-    protected $visible = ['name','startDate','endDate','dcType','dc','img','descript'];
+    protected $fillable = ['name','description','startDate','endDate','discount','pointCosume'];
+    protected $visible = ['name','description','startDate','endDate','discount','pointCosume'];
 
     // public function albums()
     // {

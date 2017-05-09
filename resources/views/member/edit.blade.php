@@ -1,5 +1,5 @@
 @extends('layouts.master')
-
+ <script src="{{ asset('/js/app.js') }}"></script>
 @section('content')
   <fieldset>
   <div id="register">
@@ -27,7 +27,7 @@
       <!-- E-mail -->
       <label class="control-label" for="email">Telephone</label>
       <div class="controls">
-        <input type="text" id="tel" name="tel" placeholder="" class="input-xlarge" v-model="telephone">
+        <input type="text" id="phone" name="phone" placeholder="" class="input-xlarge" v-model="telephone">
         <p class="help-block">Please provide your Telephone</p>
       </div>
     </div>
@@ -69,7 +69,7 @@
         data : {
           user: "{{Auth::user()->name}}",
           email: "{{Auth::user()->email}}",
-          telephone : "{{Auth::user()->tel}}",
+          telephone : "{{Auth::user()->phone}}",
           pass:"",
           passcon:""
         },
@@ -79,11 +79,11 @@
                     $("#divCheckPasswordMatch").html("Passwords do not match!");
                 }
                 else if (this.user!="" && this.email!="" && this.pass==this.passcon){
-                    axios.put('http://wongklomnew.dev/api/singers/update', {
+                    axios.put('http://carrentalservice.dev/api/member/update', {
                     username: this.user,
                     password: this.pass,
                     email: this.email,
-                    tel: this.telephone,
+                    phone: this.telephone,
                     defaultmail
                     }).then(function (response) {
                         //console.log(response.data.data);

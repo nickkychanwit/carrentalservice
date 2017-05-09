@@ -36,6 +36,8 @@
   <label for="phoneNum" class="col-2 col-form-label">Phone Number</label>
   <input class="form-control" type="text" name="phoneNum" value="{{ $phoneNum }}" placeholder="{{ $phoneNum }}" readonly>
   <input type="hidden" name="car" value="{{$car}}">
+  <label for="phoneNum" class="col-2 col-form-label">Code Voucher</label>
+  <input class="form-control" type="text" name="voucher"  >
   <br>
   <button type="submit" class="btn btn-primary" name="button" value="confirm">Confirm</button>
   <button type="submit" class="btn btn-danger" name="button" value="back">Edit Driver Information</button>

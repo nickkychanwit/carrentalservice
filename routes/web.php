@@ -15,6 +15,9 @@ Route::get('/', function () {
 });
 Route::get('/return', 'RentalController@bookingReturn');
 Route::get('/promotion', 'PromotionController@show');
+Route::get('/promotion',function(){
+  return view('promotion');
+});
 
 Route::get('/receive', 'RentalController@bookingReceive');
 Route::get('/receive/{id}/{status}', 'RentalController@updateStatus');
@@ -33,10 +36,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 
 // Route::get('/promotion','PromotionController@index');
-Route::get('/promotion', function () {
-    return view('promotion');
-});
-Route::post('/promotion','PromotionController@show');
 Route::get('/voucher','VoucherController@index')->name('voucher');
+Route::post('/vouchers','VoucherController@store')->name('voucher.store');
 Route::get('/addcar','CarController@index');
 Route::post('/addcar','CarController@store')->name('createcar');

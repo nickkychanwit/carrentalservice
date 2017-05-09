@@ -43,7 +43,7 @@
               <strong>{{ $errors->first('phone') }}</strong>
             </span>
         @endif
-        <p class="help-block">Please provide your Telephone</p>
+        <p class="help-block">Please provide your Telephone 10 characters</p>
       </div>
     </div>
 
@@ -93,7 +93,7 @@
                 if (this.pass!=this.passcon){
                     $("#divCheckPasswordMatch").html("Passwords do not match!");
                 }
-                else if (this.user!="" && this.email!="" && this.pass==this.passcon){
+                else if (this.user!="" && this.email!="" && this.telephone!="" && this.telephone.length<=10  && this.pass==this.passcon && this.pass.length>=4){
                     axios.put('http://carrentalservice.dev/api/member/update', {
                     username: this.user,
                     password: this.pass,
@@ -114,7 +114,7 @@
                     });
                 }
                 else{
-                  console.log(this.user);
+                  alert("ใส่ข้อมูลให้ถูกต้อง")
                 }
             }
         }

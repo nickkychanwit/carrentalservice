@@ -10,7 +10,12 @@
       <!-- Username -->
       <label class="control-label"  for="username">Name</label>
       <div class="controls">
-        <input type="text" id="username" name="username" placeholder="" class="input-xlarge" v-model="user" >
+        <input type="text" id="name" name="name" placeholder="" class="input-xlarge" v-model="user" required>
+        @if ($errors->has('name'))
+            <span class="help-block">
+              <strong>{{ $errors->first('name') }}</strong>
+            </span>
+        @endif
         <p class="help-block">Username can contain any letters or numbers, without spaces</p>
       </div>
     </div>
@@ -19,7 +24,12 @@
       <!-- E-mail -->
       <label class="control-label" for="email">E-mail</label>
       <div class="controls">
-        <input type="text" id="email" name="email" placeholder="" class="input-xlarge" v-model="email">
+        <input type="text" id="email" name="email" placeholder="" class="input-xlarge" v-model="email" required>
+        @if ($errors->has('email'))
+            <span class="help-block">
+              <strong>{{ $errors->first('email') }}</strong>
+            </span>
+        @endif
         <p class="help-block">Please provide your E-mail</p>
       </div>
     </div>
@@ -27,7 +37,12 @@
       <!-- E-mail -->
       <label class="control-label" for="email">Telephone</label>
       <div class="controls">
-        <input type="text" id="phone" name="phone" placeholder="" class="input-xlarge" v-model="telephone">
+        <input type="text" id="phone" name="phone" placeholder="" class="input-xlarge" v-model="telephone" required>
+        @if ($errors->has('phone'))
+            <span class="help-block">
+              <strong>{{ $errors->first('phone') }}</strong>
+            </span>
+        @endif
         <p class="help-block">Please provide your Telephone</p>
       </div>
     </div>

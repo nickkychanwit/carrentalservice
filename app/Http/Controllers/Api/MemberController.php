@@ -44,7 +44,6 @@ class MemberController extends Controller
         $singer->password=trim($request->password);
         $singer->email=trim($request->email);
         $singer->phone=trim($request->tel);
-
         if (!empty($singer->name) && $singer->save()){
             return [
                 'success' => true,
@@ -68,7 +67,7 @@ class MemberController extends Controller
      */
     public function show($id)
     {
-        $singer = \App\Singer::find($id);
+        $singer = \App\User::find($id);
         if (!is_null($singer))
             return [
                 'success' => true,
@@ -82,7 +81,7 @@ class MemberController extends Controller
 
     public function albums($id)
     {
-        $singer = \App\Singer::find($id);
+        $singer = \App\User::find($id);
         if (!is_null($singer)) {
             return [
                 'success' => true,
@@ -120,11 +119,11 @@ class MemberController extends Controller
     public function update(Request $request)
     {
         //
+        
         $singer = \App\User::where('email','=',$request->defaultmail)->first();
-
         $singer->name=$request->username;
         $singer->email=$request->email;
-        $singer->tel=$request->tel;
+        $singer->phone=$request->phone;
         $singer->password=bcrypt($request->password);
         $singer->save();
     }

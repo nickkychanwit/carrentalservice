@@ -18,4 +18,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 Route::resource('promotions', 'Api\PromotionController');
 Route::resource('addcar', 'Api\CarController');
-Route::put('member/update', 'Api\MemberController@update');
+//Route::put('member/update', 'Api\MemberController@update');
+Route::resource('member', 'Api\MemberController');
+Route::get('member/{member}', 'Api\MemberController@update');
